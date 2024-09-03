@@ -9,7 +9,6 @@ import {
   GeoJsonProperties,
 } from "geojson";
 import L from "leaflet";
-// import markIcon from '../assets/mapmarker.png'
 
 interface Props {
   height: string;
@@ -40,7 +39,6 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
     country: string;
     imageUrl: string;
   } | null>(null);
-  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     setColor((prev) => {
@@ -85,16 +83,21 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
       country: country,
       imageUrl: imageUrl,
     });
-    setShowPopup(true);
   };
 
-  const handleMouseOver = () => {
-    setShowPopup(true);
+  const handleMouseOver = (e: L.LeafletMouseEvent) => {
+    const layer = e.target;
+    layer.setStyle({
+      fillOpacity: 0.8,
+    });
   };
 
-    const handleMouseOut = () => {
-      setShowPopup(false);
-    }
+  const handleMouseOut = (e: L.LeafletMouseEvent) => {
+    const layer = e.target;
+    layer.setStyle({
+      fillOpacity: 1,
+    });
+  };
 
   const styleFeature = (feature?: Feature<Geometry, GeoJsonProperties>) => {
     if (!feature) return {};
@@ -127,16 +130,11 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
     if (feature.properties && feature.properties.seat_district_en) {
       layer.on({
         click: highlightFeature,
+        mouseover: handleMouseOver,
+        mouseout: handleMouseOut,
       });
     }
   };
-
-    // const markerIcon = new L.Icon({
-    //   iconUrl: markIcon,
-    //   iconSize: [35, 45],
-    //   iconAnchor: [17, 46],
-    //   popupAnchor: [0, -46],
-    // })
 
   const Legend = () => (
     <div
@@ -144,11 +142,8 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
         position: "absolute",
         bottom: "10px",
         right: "230px",
-        // backgroundColor: "white",
         padding: "10px",
-        // borderRadius: "5px",
-        // boxShadow: "0 0 15px rgba(0, 0, 0, 0.2)",
-        zIndex: 1000,
+        zIndex: 10,
         fontSize: "10px",
       }}
     >
@@ -218,14 +213,14 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
           height: "100%",
           width: "100%",
           background: "none",
-          marginLeft: "110px",
+          marginLeft: "50px",
         }}
         scrollWheelZoom={false}
         keyboard={false}
-        // zoomControl={false}
-        // doubleClickZoom={false}
-        // dragging={false}
+        zoomControl={false}
         attributionControl={false}
+        doubleClickZoom={false}
+        dragging={false}
       >
         <GeoJSON
           data={geojson}
@@ -235,26 +230,23 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
         {marker?.position && (
           <Marker
             position={marker.position}
-            eventHandlers={{ mouseover: handleMouseOver, mouseout: handleMouseOut }}
           >
             <Tooltip permanent opacity={1}>
               <strong>{selected}</strong>
             </Tooltip>
-            {showPopup && (
-              <Popup>
-                <div>
-                  <img
-                    src={marker.imageUrl}
-                    alt={marker.popupText}
-                    style={{ width: "100px", height: "auto" }}
-                  />
-                  <br />
-                  <strong>{marker.popupText}</strong>
-                  <br />
-                  Country: {marker.country}
-                </div>
-              </Popup>
-            )}
+            <Popup>
+              <div>
+                <img
+                  src={marker.imageUrl}
+                  alt={marker.popupText}
+                  style={{ width: "100px", height: "auto" }}
+                />
+                <br />
+                <strong>{marker.popupText}</strong>
+                <br />
+                Country: {marker.country}
+              </div>
+            </Popup>
           </Marker>
         )}
       </MapContainer>
