@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { MapContainer, GeoJSON, Marker, Tooltip, Popup } from "react-leaflet";
+import React, { useState, useRef } from "react";
+import { MapContainer, GeoJSON, Marker, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import geojsonData from "../../j_and_k_assembly_new_borders.json";
 import {
@@ -9,8 +9,10 @@ import {
   GeoJsonProperties,
 } from "geojson";
 import L from "leaflet";
+import { HomeIcon } from "@radix-ui/react-icons";
 
 interface Props {
+  setSelectedConstituency: React.Dispatch<React.SetStateAction<string | undefined>>;
   height: string;
   width: string;
   zoom: number;
@@ -20,25 +22,16 @@ interface Props {
   otherCount: number;
 }
 
-type DistrictKeys = {
-  dist: string;
-  party: string;
-  color: string;
-  opacity?: number;
-};
-
 const geojson: FeatureCollection<Geometry, GeoJsonProperties> =
   geojsonData as FeatureCollection<Geometry, GeoJsonProperties>;
 
-const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
+const JammuMap: React.FC<Props> = ({setSelectedConstituency, height, width, zoom }) => {
   const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
   const [selectedDistrictId, setSelectedDistrictId] = useState<string | null>(null);
   const [mapSize, setMapSize] = useState({ height: height, width: width });
   const [marker, setMarker] = useState<{
     position: L.LatLngExpression;
     popupText: string;
-    country: string;
-    imageUrl: string;
   } | null>(null);
   const mapRef = useRef<L.Map>(null); // Reference to the map
 
@@ -62,35 +55,37 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
     const layer = e.target;
     const districtId = layer.feature?.properties?.seat_id;
     const district = layer.feature?.properties?.seat_district_en;
-    const country = layer.feature?.properties?.country;
-    const imageUrl = layer.feature?.properties?.imageUrl;
 
     setSelectedDistrictId(districtId || "")
     setSelectedDistrict(district || ""); // Set the selected district
+    setSelectedConstituency(district || "")
     setMarker({
       position: e.latlng as L.LatLngExpression,
       popupText: district || null,
-      country: country,
-      imageUrl: imageUrl,
     });
 
     // Zoom into the selected district
     const bounds = layer.getBounds();
-    mapRef.current?.fitBounds(bounds, { maxZoom: 12 }); // Adjust maxZoom as needed
+    mapRef.current?.fitBounds(bounds, { maxZoom: 14 }); // Adjust maxZoom as needed
   };
 
   const handleMouseOver = (e: L.LeafletMouseEvent) => {
+   
     const layer = e.target;
-    layer.setStyle({
-      fillOpacity: 0.8,
-    });
+    layer.openTooltip();
+    // layer.setStyle({
+    //   fillOpacity: 0.8,
+    // });
+  
   };
 
   const handleMouseOut = (e: L.LeafletMouseEvent) => {
+    if(!selectedDistrictId){
     const layer = e.target;
     layer.setStyle({
       fillOpacity: 1,
     });
+  }
   };
 
   const styleFeature = (feature?: Feature<Geometry, GeoJsonProperties>) => {
@@ -119,6 +114,7 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
       color: borderColor,
       weight: 0.8,
       fillOpacity: fillOpacity,
+      interactive: !selectedDistrictId || districtId === selectedDistrictId,
       transition: "all 0.3s ease",
     } as L.PathOptions;
   };
@@ -128,9 +124,14 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
     layer: L.Layer
   ) => {
     if (feature.properties && feature.properties.seat_district_en) {
+      layer.bindTooltip(feature.properties.seat_district_en, {
+        permanent: false,
+        direction: "top",
+        className: "custom-tooltip",
+      });
       layer.on({
         click: highlightFeature,
-        // mouseover: handleMouseOver,
+        mouseover: handleMouseOver,
         // mouseout: handleMouseOut,
       });
     }
@@ -138,8 +139,10 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
 
   const resetMap = () => {
     setSelectedDistrictId(null);  // Reset the selected district
+    setSelectedDistrict(null)
     setMarker(null);  // Clear the marker
     setMapSize({ height: height, width: width });  // Reset the map size
+    setSelectedConstituency(undefined)
 
     // Reset the map view to the initial center and zoom level
     if (mapRef.current) {
@@ -217,7 +220,7 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
         marginBottom: "10px",
       }}
     >
-      <button onClick={resetMap} style={{border:'none', background:'#c6c6c6',padding:'4px',borderRadius:'2px', position: "absolute", top: "10px", left: "10px", zIndex: 1000 }}>Reset map</button>
+      <HomeIcon onClick={resetMap} style={{width:'40px',height:'40px',cursor:'pointer', border:'none', background:'#c6c6c6',padding:'6px',borderRadius:'2px', position: "absolute", top: "10px", left: "10px", zIndex: 1000 }} />
       <MapContainer
         center={[33.7, 75.01]}
         zoom={zoom}
@@ -245,7 +248,7 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
             <Tooltip permanent opacity={1}>
               <strong>{selectedDistrict}</strong>
             </Tooltip>
-            <Popup>
+            {/* <Popup>
               <div>
                 <img
                   src={marker.imageUrl}
@@ -257,7 +260,7 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
                 <br />
                 Country: {marker.country}
               </div>
-            </Popup>
+            </Popup> */}
           </Marker>
         )}
       </MapContainer>
