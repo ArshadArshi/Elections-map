@@ -19,12 +19,18 @@ export const data = [
     },
     pieSliceText: 'label', // Display slice labels, which might make slices appear "fatter"
     pieStartAngle: 45, 
+    chartArea: {
+      left: 150,
+      top: 10,
+      width: '100%',
+      height: '100%',
+  },
   };
 
 function PieChart() {
 
   return (
-    <div className="w-[500px]">
+    <div className="w-[500px] flex flex-col justify-start items-center">
       <div className="flex justify-center items-center gap-3">
       <div className="flex flex-col text-xs rounded text-orange-500 justify-center items-center border border-black w-[80px] h-[80px]">
         BJP

@@ -1,3 +1,7 @@
+  .leaflet-interactive:focus{
+    outline: none !important;
+  }
+
 .count {
     display: flex;
     justify-content: space-around;

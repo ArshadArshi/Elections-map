@@ -55,7 +55,7 @@ const TableData: React.FC<TableDataProps> = ({ selectedConstituency }) => {
   
 
   return (
-    <div style={{width:"60%",height:'30%'}}>
+    <div style={{width:"100%",height:'20%'}}>
       <Table className="border border-black">
         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>

@@ -111,7 +111,6 @@ const JammuMapWise: React.FC<Props> = ({ height, width, zoom }) => {
         layer.bindTooltip(feature.properties.seat_district_en, {
             permanent: false,
             direction: "top",
-            className: "custom-tooltip",
           });
       layer.on({
         click: highlightFeature,
