@@ -107,3 +107,75 @@
     width: 100px;
     margin-bottom: 2px;
 }
+
+.live-blog-container {
+    display: flex;
+   
+    gap: 6px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+  }
+  
+  .live-dot {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+  }
+  
+  .live-text {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .blog-text {
+    color: black;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cards to next line if they overflow */
+    gap: 4px; /* Spacing between cards */
+    justify-content: center; /* Distribute space between cards */
+  }
+  
+  .card-container .card {
+    flex: 1 1 calc(33.33% - 16px); /* 33.33% width for 3 cards per row */
+    max-width: calc(33.33% - 16px); /* Ensure the cards do not exceed this width */
+    margin-bottom: 20px; /* Optional: add some spacing between rows */
+  }
+  
+  /* Adjust for 5 cards per row */
+  @media (min-width: 1200px) {
+    .card-container .card {
+      flex: 1 1 calc(20% - 16px); /* 20% width for 5 cards per row */
+      max-width: calc(20% - 16px);
+    }
+  }
+  
+  .data-\[state\=active\]\:bg-background[data-state="active"]{
+    background-color: red !important;
+  }
+  .data-\[state\=active\]\:bg-background[data-state="inactive"]{
+    background-color: #4b4a4a !important;
+    color: #7e7c7c !important;
+  }

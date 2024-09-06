@@ -23,12 +23,60 @@ function Cards() {
         "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
         status: "LOSS",
     },
+    {
+      id: 4,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
+    {
+      id: 5,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
+    {
+      id: 6,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
+    {
+      id: 7,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
+    {
+      id: 8,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
+    {
+      id: 9,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
+    {
+      id: 10,
+      partyName: "INC | JAMMU",
+      imageUrl:
+        "https://3state-results.my.canva.site/jammu-kashmir-haryana-election-2024-m/images/e488202322403ad180121e2a682a9dbe.png",
+        status: "LOSS",
+    },
   ];
 
   return (
     <>
-      <div className="flex flex-col gap-3 font-bold text-black">
-        KEY CANDIDATES
+      <div className="w-[100%] flex flex-wrap card-container">
         {cardData.map((party) => (
           <Card
             key={party.id}

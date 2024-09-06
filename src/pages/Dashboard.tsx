@@ -13,8 +13,11 @@ import JammuMapWise from "./JammuMapWise";
 import Haryanamap from "./Haryanamap";
 import geojsonItem from "../../Haryana_AC.json"
 import MultipleTabs from "./Multipletabs";
+import SemiCircleChart from "./SemiCircleChart";
+import twostates from '../assets/2states.png'
+import news from '../assets/news.png'
 
-export default function Dashboard() {
+const Dashboard: React.FC = () => {
   const [bjpCount, setBjpCount] = useState(0);
   const [incCount, setIncCount] = useState(0);
   const [congressCount, setCongressCount] = useState(0);
@@ -86,9 +89,38 @@ export default function Dashboard() {
 
   return (
     <>
-      <PageHeader>
-        <PageHeaderHeading>Articles</PageHeaderHeading>
-      </PageHeader>
+      {/* <PageHeader className="flex justify-center items-center font-bold">
+        <PageHeaderHeading className="w-[300px]">ELECTIONS RESULTS</PageHeaderHeading>
+      </PageHeader> */}
+      <div className="flex justify-center items-center mt-2">
+      <Tabs defaultValue="ENGLISH" className="w-[400px] mb-10">
+        <TabsList className="grid grid-cols-2 text-white font-bold gap-1">
+          <TabsTrigger style={{fontSize:'30px',color:'white'}} value="ENGLISH">ENGLISH</TabsTrigger>
+          <TabsTrigger style={{fontSize:'30px',color:'white'}} value="HINDI">HINDI</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      </div>
+      <div className="flex w-[100%] justify-center items-center mb-10">
+      <div className="w-[33.3%] flex flex-col justify-center items-center">
+        <div className="flex justify-center items-center font-bold" style={{fontSize:'30px',textAlign:'center'}}>REQUIRED TO WIN</div>
+        <SemiCircleChart />
+        <ProgressBar />
+      </div>
+      <div className="w-[33.3%]">
+        <img src={twostates} alt="" />
+        <div className="live-blog-container">
+  <span className="live-text">| LIVE</span> <span className="blog-text">BLOG </span>
+  <span className="live-dot"> </span> <span className="live-text">|</span> 
+</div>
+        <img src={news} alt="" />
+      </div>
+      <div className="w-[33.3%] flex flex-col justify-enter items-center">
+        <div className="flex justify-center items-center font-bold text-lg" style={{fontSize:'30px',textAlign:'center'}}>REQUIRED TO WIN</div>
+        <SemiCircleChart />
+     
+        <ProgressBar />
+      </div>
+      </div>
       <div>
         <MultipleTabs />
       </div>
@@ -128,3 +160,5 @@ export default function Dashboard() {
     </>
   );
 }
+
+export default Dashboard
