@@ -81,12 +81,12 @@ export function CarouselCard() {
   }, [totalItems]);
 
   return (
-    <div className="relative">
-      <Carousel className="w-[420px]">
+    <div className="relative shadow-[0px_4px_10px_rgba(0,0,0,0.3)] mb-8">
+      <Carousel className="w-[400px]">
         <CarouselContent>
           <CarouselItem>
-            <div className="p-5">
-              <Card>
+            <div>
+              <Card className="rounded-none p-2" style={{background:'#ededed'}}>
                 <CardContent className="flex aspect-rectangle w-[650px] items-center justify-evenly p-3">
                   {/* Left side: Image */}
                   
@@ -120,14 +120,14 @@ export function CarouselCard() {
       </Carousel>
 
       {/* Pagination dots */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="flex justify-center items-center absolute mt-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {cardContents.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentPage(index)}
-            className={`w-2 h-2 rounded-full ${
-              currentPage === index ? "bg-blue-500" : "bg-gray-300"
-            }`}
+            className={`w-${currentPage === index ? '4' : '2'} h-${currentPage === index ? '4' : '2'} rounded-full ${
+                currentPage === index ? "bg-gray-600" : "bg-gray-300"
+              }`}
           />
         ))}
       </div>

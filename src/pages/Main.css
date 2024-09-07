@@ -110,9 +110,7 @@
 
 .live-blog-container {
     display: flex;
-   
-    gap: 6px;
-    height: 100%;
+    gap: 12px;
     justify-content: center;
     align-items: center;
     font-size: 40px;

@@ -6,6 +6,7 @@ import PieChart from "./PieChart"
 import Haryanamap from "./Haryanamap"
 import TableData from "./TableData"
 import Cards from "./Cards"
+import HaryanaMapWise from "./HaryanaMapWise"
 
 function MultipleTabs() {
  
@@ -34,9 +35,9 @@ function MultipleTabs() {
           <TabsTrigger className="w-full" value="VIP">VIP</TabsTrigger>
         </TabsList>
         <TabsContent value="Phase Wise">
-          <div className="flex justify-around items-center">
+          <div className="flex justify-between items-center">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           <div className="w-[700px]">
             <TableData />
@@ -46,14 +47,14 @@ function MultipleTabs() {
         <TabsContent value="Voter Turnout">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>
         <TabsContent value="Constituency">
           <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           <div className="w-1/2">
             <PieChart/>
@@ -63,35 +64,35 @@ function MultipleTabs() {
         <TabsContent value="Loksabha Wise">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>
         <TabsContent value="District Wise">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>
         <TabsContent value="Region Wise">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
         </TabsContent>
         <TabsContent value="Comparision">
         <div className="flex justify-between items-center mt-4">
           <div className="w-full z-0 flex justify-between ">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>
         <TabsContent value="VIP">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <JammuMap setSelectedConstituency={setSelectedConstituency} height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMap height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           <div>
             <Cards />
@@ -115,7 +116,7 @@ function MultipleTabs() {
         <TabsContent value="Phase Wise">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <HaryanaMapWise height={"400px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>

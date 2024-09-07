@@ -12,7 +12,7 @@ import L from "leaflet";
 import { HomeIcon } from "@radix-ui/react-icons";
 
 interface Props {
-  setSelectedConstituency: React.Dispatch<React.SetStateAction<string | undefined>>;
+  // setSelectedConstituency: React.Dispatch<React.SetStateAction<string | undefined>>;
   height: string;
   width: string;
   zoom: number;
@@ -25,7 +25,7 @@ interface Props {
 const geojson: FeatureCollection<Geometry, GeoJsonProperties> =
   geojsonData as FeatureCollection<Geometry, GeoJsonProperties>;
 
-const HaryanaMapWise: React.FC<Props> = ({setSelectedConstituency, height, width, zoom }) => {
+const HaryanaMapWise: React.FC<Props> = ({ height, width, zoom }) => {
   const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
   const [selectedDistrictId, setSelectedDistrictId] = useState<string | null>(null);
   const [mapSize, setMapSize] = useState({ height: height, width: width });
@@ -58,7 +58,7 @@ const HaryanaMapWise: React.FC<Props> = ({setSelectedConstituency, height, width
 
     setSelectedDistrictId(districtId || "")
     setSelectedDistrict(district || ""); // Set the selected district
-    setSelectedConstituency(district || "")
+    // setSelectedConstituency(district || "")
     setMarker({
       position: e.latlng as L.LatLngExpression,
       popupText: district || null,
@@ -142,11 +142,11 @@ const HaryanaMapWise: React.FC<Props> = ({setSelectedConstituency, height, width
     setSelectedDistrict(null)
     setMarker(null);  // Clear the marker
     setMapSize({ height: height, width: width });  // Reset the map size
-    setSelectedConstituency(undefined)
+    
 
     // Reset the map view to the initial center and zoom level
     if (mapRef.current) {
-      mapRef.current.setView([33.7, 75.01], zoom);
+      mapRef.current.setView([29.06, 76.04], zoom);
     }
   };
 

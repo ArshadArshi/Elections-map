@@ -92,44 +92,42 @@ const Dashboard: React.FC = () => {
       {/* <PageHeader className="flex justify-center items-center font-bold">
         <PageHeaderHeading className="w-[300px]">ELECTIONS RESULTS</PageHeaderHeading>
       </PageHeader> */}
-      <div className="flex justify-center items-center mt-2">
-      <Tabs defaultValue="ENGLISH" className="w-[400px] mb-10">
-        <TabsList className="grid grid-cols-2 text-white font-bold gap-1">
-          <TabsTrigger style={{fontSize:'30px',color:'white'}} value="ENGLISH">ENGLISH</TabsTrigger>
-          <TabsTrigger style={{fontSize:'30px',color:'white'}} value="HINDI">HINDI</TabsTrigger>
-        </TabsList>
-      </Tabs>
-      </div>
-      <div className="flex w-[100%] justify-center items-center mb-10">
+      <div className="flex w-[100%] justify-between items-center mb-10">
       <div className="w-[33.3%] flex flex-col justify-center items-center">
-        <div className="flex justify-center items-center font-bold" style={{fontSize:'30px',textAlign:'center'}}>REQUIRED TO WIN</div>
         <SemiCircleChart />
         <ProgressBar />
       </div>
       <div className="w-[33.3%]">
+      <div className="flex flex-col mt-[-10px]">
+      <Tabs defaultValue="ENGLISH" className="w-[400px]">
+        <TabsList className="bg-hidden grid grid-cols-2 text-white font-bold gap-1">
+          <TabsTrigger style={{fontSize:'30px',color:'white',padding:'15px'}} value="ENGLISH">ENGLISH</TabsTrigger>
+          <TabsTrigger style={{fontSize:'30px',color:'white',padding:'15px'}} value="HINDI">HINDI</TabsTrigger>
+        </TabsList>
+      </Tabs>
+     <div className="relative top-[17px]">
         <img src={twostates} alt="" />
-        <div className="live-blog-container">
+        <div className="live-blog-container absolute top-[165px] left-[50px]">
   <span className="live-text">| LIVE</span> <span className="blog-text">BLOG </span>
   <span className="live-dot"> </span> <span className="live-text">|</span> 
+  </div>
+  </div>
+  <img className="mt-10" src={news} alt="" />
 </div>
-        <img src={news} alt="" />
+      
       </div>
       <div className="w-[33.3%] flex flex-col justify-enter items-center">
-        <div className="flex justify-center items-center font-bold text-lg" style={{fontSize:'30px',textAlign:'center'}}>REQUIRED TO WIN</div>
         <SemiCircleChart />
-     
         <ProgressBar />
       </div>
       </div>
-      <div>
         <MultipleTabs />
-      </div>
       {/* <div>
           <ProgressBar/>
         </div> */}
       <div className="flex justify-between mb-10 z-0">
       <div className="font-bold text-black">MAP
-        <JammuMap setSelectedConstituency={setSelectedConstituency} height="350px" width="350px" zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+        <JammuMap height="350px" width="350px" zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
       </div>
         <div className="font-bold text-black">VOTE SHARE
         <PieChart />
