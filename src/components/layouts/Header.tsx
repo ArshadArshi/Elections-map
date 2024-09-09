@@ -37,7 +37,7 @@ export function Header() {
 
   return (
     <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur">
-      <div className="container flex items-center">
+      <div className="p-4 container flex items-center">
         <div className="mr-4 hidden md:flex">
           <NavLink to="/" className="mr-6 flex items-center space-x-2">
             <Logo />

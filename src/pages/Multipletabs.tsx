@@ -75,8 +75,10 @@ function MultipleTabs() {
           </div>
         </TabsContent>
         <TabsContent value="Region Wise">
+        <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
           <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          </div>
           </div>
         </TabsContent>
         <TabsContent value="Comparision">
