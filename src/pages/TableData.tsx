@@ -10,11 +10,12 @@ import * as XLSX from 'xlsx';
 import { useEffect, useState } from "react";
 
 interface RowData {
+  JKNC: number;
+  AINC: number;
+  PDP: number;
   ID: number;
   Constituency: string;
   BJP: number;
-  INC: number;
-  JMK: number;
   OTH: number;
 }
 
@@ -65,6 +66,12 @@ const TableData: React.FC<TableDataProps> = ({ selectedConstituency }) => {
             </TableHead>
             <TableHead
               className="text-center text-white"
+              style={{ background: "green" }}
+            >
+              JKNC
+            </TableHead>
+            <TableHead
+              className="text-center text-white"
               style={{ background: "#ff914d" }}
             >
               BJP
@@ -73,13 +80,13 @@ const TableData: React.FC<TableDataProps> = ({ selectedConstituency }) => {
               className="text-center text-white"
               style={{ background: "#5271ff" }}
             >
-              INC
+              AINC
             </TableHead>
             <TableHead
               className="text-center text-white"
               style={{ background: "#2f6a0d" }}
             >
-              JMK
+              PDP
             </TableHead>
             <TableHead
               className="text-center text-white"
@@ -97,9 +104,10 @@ const TableData: React.FC<TableDataProps> = ({ selectedConstituency }) => {
              style={{ backgroundColor: selectedConstituency === row.Constituency ? '#f5f519' : undefined }}
            >
               <TableCell className="p-2 font-medium text-center border border-black">{row.Constituency}</TableCell>
+              <TableCell className="p-2 font-medium text-center border border-black">{row.JKNC}</TableCell>
               <TableCell className="p-2 font-medium text-center border border-black">{row.BJP}</TableCell>
-              <TableCell className="p-2 font-medium text-center border border-black">{row.INC}</TableCell>
-              <TableCell className="p-2 font-medium text-center border border-black">{row.JMK}</TableCell>
+              <TableCell className="p-2 font-medium text-center border border-black">{row.AINC}</TableCell>
+              <TableCell className="p-2 font-medium text-center border border-black">{row.PDP}</TableCell>
               <TableCell className="p-2 font-medium text-center border border-black">{row.OTH}</TableCell>
             </TableRow>
           ))}

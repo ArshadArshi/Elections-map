@@ -5,10 +5,11 @@ import jmk from "../assets/jmk.png";
 
 function PartyDetailsCard() {
   const partyData = [
-    { party: "BJP", leads: 20, win: 40, total: 60, symbol: bjp, color: "#FF9900" }, // BJP - Orange
-    { party: "INC", leads: 30, win: 30, total: 60, symbol: inc, color: "#4DB6E2" }, // INC - Blue
-    { party: "JMK", leads: 10, win: 20, total: 30, symbol: jmk, color: "#006400" }, // JMK - Green
-    { party: "OTH", leads: 20, win: 10, total: 30, symbol: jmk, color: "#808080" }, // OTH - Grey
+    { party: "JKNC", leads: 20, win: 40, total: 60, symbol: jmk, color: "#006400" }, // BJP - Orange
+    { party: "BJP", leads: 30, win: 30, total: 60, symbol: bjp, color: "#FF9900" }, // INC - Blue
+    { party: "AINC", leads: 10, win: 20, total: 30, symbol: inc, color: "#4DB6E2" }, // JMK - Green
+    { party: "PDP", leads: 10, win: 20, total: 30, symbol: jmk, color: "#006400" }, // JMK - Green
+    { party: "OTH", leads: 20, win: 10, total: 30, symbol: bjp, color: "#808080" }, // OTH - Grey
   ];
 
   return (
@@ -33,11 +34,11 @@ function PartyDetailsCard() {
         {/* Map over party data */}
         {partyData.map((party) => (
           <div key={party.party} style={{ background: "#ededed" }}>
-            <div className="flex justify-around items-center">
+            <div className="flex justify-between pl-4 pr-9 items-center">
               {/* Style the symbol and party name based on the party color */}
               <div
                 style={{ fontSize: "20px", color: party.color }}
-                className="flex justify-center items-center gap-1"
+                className="flex justify-center items-center gap-1 font-bold"
               >
                 <img className="w-4 h-4" src={party.symbol} alt={party.party} /> | {party.party}
               </div>

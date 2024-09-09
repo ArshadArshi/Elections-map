@@ -7,6 +7,7 @@ import TableData from "./TableData"
 import Cards from "./Cards"
 import HaryanaMapWise from "./HaryanaMapWise"
 import JammuMapWise from "./JammuMapWise"
+import VoterTurnoutTable from "./VoterTurnoutTable"
 
 function MultipleTabs() {
  
@@ -20,14 +21,14 @@ function MultipleTabs() {
         <TabsContent value="JAMMU & KASHMIR">
         <Tabs defaultValue="Phase Wise">
           <TabsList className="gird w-full grid-cols-2 gap-1">
-          <TabsTrigger className="w-full h-full" value="Phase Wise">Phase Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="Voter Turnout">Voter Turnout</TabsTrigger>
-          <TabsTrigger className="w-full" value="Constituency">Constituency</TabsTrigger>
-          <TabsTrigger className="w-full" value="Loksabha Wise">Loksabha Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="District Wise">District Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="Region Wise">Region Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="Comparision">Comparison</TabsTrigger>
-          <TabsTrigger className="w-full" value="VIP">VIP</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Phase Wise">Phase Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Voter Turnout">Voter Turnout</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Constituency">Constituency</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Loksabha Wise">Loksabha Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="District Wise">District Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Region Wise">Region Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Comparision">Comparison</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="VIP">VIP</TabsTrigger>
         </TabsList>
         <TabsContent value="Phase Wise">
           <div className="flex justify-between items-center">
@@ -43,6 +44,9 @@ function MultipleTabs() {
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
           <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          </div>
+          <div className="w-[700px]">
+          <VoterTurnoutTable />
           </div>
           </div>
         </TabsContent>
@@ -77,10 +81,10 @@ function MultipleTabs() {
         </TabsContent>
         <TabsContent value="Comparision">
         <div className="flex justify-between items-center mt-4">
-          <div className="w-full z-0 flex justify-between ">
-          <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
-          <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
-          <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <div className="w-full z-0 flex justify-evenly ">
+         <b>2024</b> <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+         <b>2019</b> <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+         <b>2014</b> <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>
@@ -98,15 +102,15 @@ function MultipleTabs() {
         </TabsContent>
         <TabsContent value="HARYANA">
         <Tabs defaultValue="Phase Wise">
-          <TabsList className="gird w-full grid-cols-2">
-          <TabsTrigger className="w-full h-full" value="Phase Wise">Phase Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="Voter Turnout">Voter Turnout</TabsTrigger>
-          <TabsTrigger className="w-full" value="Constituency">Constituency</TabsTrigger>
-          <TabsTrigger className="w-full" value="Loksabha Wise">Loksabha Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="District Wise">District Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="Region Wise">Region Wise</TabsTrigger>
-          <TabsTrigger className="w-full" value="Comparision">Comparison</TabsTrigger>
-          <TabsTrigger className="w-full" value="VIP">VIP</TabsTrigger>
+          <TabsList className="gird w-full grid-cols-2 gap-1">
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Phase Wise">Phase Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Voter Turnout">Voter Turnout</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Constituency">Constituency</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Loksabha Wise">Loksabha Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="District Wise">District Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Region Wise">Region Wise</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="Comparision">Comparison</TabsTrigger>
+          <TabsTrigger className="w-full" style={{color:'white',fontSize:'20px'}} value="VIP">VIP</TabsTrigger>
         </TabsList>
         <TabsContent value="Phase Wise">
         <div className="flex justify-between items-center mt-4">
@@ -155,10 +159,10 @@ function MultipleTabs() {
         </TabsContent>
         <TabsContent value="Comparision">
         <div className="flex justify-between items-center mt-4">
-          <div className="w-full z-0 flex justify-between">
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <div className="w-full z-0 flex justify-evenly">
+          <b>2024</b> <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <b>2019</b> <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <b>2014</b> <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
           </div>
           </div>
         </TabsContent>

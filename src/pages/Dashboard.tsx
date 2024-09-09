@@ -98,7 +98,7 @@ const Dashboard: React.FC = () => {
         <ProgressBar />
       </div>
       <div className="w-[33.3%]">
-      <div className="flex flex-col mt-[-10px]">
+      <div className="flex flex-col mt-[-60px]">
       <Tabs defaultValue="ENGLISH" className="w-[400px]">
         <TabsList className="bg-hidden grid grid-cols-2 text-white font-bold gap-1">
           <TabsTrigger style={{fontSize:'30px',color:'white',padding:'15px'}} value="ENGLISH">ENGLISH</TabsTrigger>
@@ -125,7 +125,7 @@ const Dashboard: React.FC = () => {
       {/* <div>
           <ProgressBar/>
         </div> */}
-      <div className="flex justify-between mb-10 z-0">
+      {/* <div className="flex justify-between mb-10 z-0">
       <div className="font-bold text-black">MAP
         <JammuMap height="350px" width="350px" zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
       </div>
@@ -133,7 +133,7 @@ const Dashboard: React.FC = () => {
         <PieChart />
         </div>
      <Cards />
-      </div>
+      </div> */}
       {/* <div className="flex justify-between mb-10 z-0">
         <div className="font-bold text-black">MAP
         <JammuMap setSelectedConstituency={setSelectedConstituency} height="350px" width="350px" zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />

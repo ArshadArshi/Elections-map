@@ -14,21 +14,21 @@ const cardContents = [
     candidateImg: one,
     name: "Omar Abdulla",
     status: "Lead",
-    party: "JMK",
+    party: "JKNC",
     constituency: "Jammu Rural",
   },
   {
     candidateImg: two,
     name: "Gian Chand Gupta",
     status: "Won",
-    party: "INC",
+    party: "AINC",
     constituency: "Panchkula",
   },
   {
     candidateImg: one,
     name: "Prasad Babu Chavala",
     status: "Lead",
-    party: "JMK",
+    party: "JKNC",
     constituency: "Jammu",
   },
   {
@@ -42,7 +42,7 @@ const cardContents = [
     candidateImg: one,
     name: "Chand",
     status: "Lead",
-    party: "INC",
+    party: "AINC",
     constituency: "Doda",
   },
   {
@@ -56,7 +56,7 @@ const cardContents = [
     candidateImg: one,
     name: "Chaturvedi",
     status: "Lead",
-    party: "JMK",
+    party: "PDP",
     constituency: "Ramban",
   },
 ];

@@ -17,23 +17,30 @@ interface ProgressData {
 function ProgressBar() {
   const initialProgressData: ProgressData[] = [
     {
+      party: "JKNC",
+      progress: 30,
+      color: "#32cd32",
+      avatar: jmk,
+      assemblyChair: chair,
+    },
+    {
       party: "BJP",
-      progress: 45,
-      color: "#ff6347",
+      progress: 56,
+      color: "#ff6347", 
       avatar: bjp,
       assemblyChair: chair,
     },
     {
-      party: "INC",
-      progress: 66,
+      party: "AINC",
+      progress: 45,
       color: "skyblue",
       avatar: inc,
       assemblyChair: chair,
     },
     {
-      party: "JMK",
-      progress: 30,
-      color: "#32cd32",
+      party: "PDP",
+      progress: 20,
+      color: "darkgreen",
       avatar: jmk,
       assemblyChair: chair,
     },
@@ -67,26 +74,26 @@ function ProgressBar() {
       {progressData.map((item, index) => (
         <div key={index} className="flex mb-4 gap-2 relative">
           {/* Avatar of the party */}
-          <Avatar className="mt-[-10px] mb-2 rounded-full">
-            <AvatarImage className="w-7 h-7" src={item.avatar} alt="@shadcn" />
+          <Avatar style={{backgroundColor:item.color}} className="mt-[-16px] mb-2 rounded-full flex justify-center items-center">
+            <AvatarImage className="w-6 h-6" src={item.avatar} alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
 
           {/* Progress Bar with Assembly Chair Image */}
-          <div className="relative w-[75%]">
-            <div className="h-2 bg-gray-300 overflow-hidden rounded-none">
-              <div className="h-2" style={{ width: `${item.progress}%`, backgroundColor: item.color }} />
+          <div className="relative w-[100%]">
+            <div className="h-3 bg-gray-600 overflow-hidden rounded-none">
+              <div className="h-3" style={{ width: `${item.progress}%`, backgroundColor: item.color }} />
             </div>
             {/* Assembly chair image placed at the end of the progress */}
             <img
               src={man}
               alt="assembly chair"
-              className="absolute top-[-5px] w-[20px] h-[20px]"
+              className="absolute top-[-8px] w-[20px] h-[20px]"
               style={{ left: `calc(${item.progress}% - 10px)` }} // Dynamically position at the end of progress
             />
           </div>
-          <Avatar className="mt-[-10px] mb-2 rounded">
-            <AvatarImage className="w-7 h-7" src={chair} alt="@shadcn" />
+          <Avatar className="mt-[-20px] rounded">
+            <AvatarImage className="w-5 h-8" src={chair} alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           {/* Displaying percentage */}
