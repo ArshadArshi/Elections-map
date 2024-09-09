@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import PartyDetailsCard from "./PartyDetailsCard";
 import { CarouselCard } from "./CarousalCard";
-import ProgressBar from "./ProgressBar";
 
 const SemiCircleChart: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
@@ -20,7 +19,7 @@ const SemiCircleChart: React.FC = () => {
 
       const sum = data.reduce((sum, cur) => sum + cur.value, 0);
 
-      const defaultPalette = ['orange', 'skyblue', 'green', 'grey'];
+      const defaultPalette = ['#fc5d1a', '#5271ff', '#008d0a', '#a6a6a6'];
 
       const radius = ['35%', '80%'];
 
@@ -64,7 +63,7 @@ const SemiCircleChart: React.FC = () => {
           renderItem: function (params: { dataIndex: any; }, api: { getWidth: () => number; getHeight: () => number; }) {
             const idx = params.dataIndex;
             const viewSize = Math.min(api.getWidth(), api.getHeight());
-            const r0 = ((parseFloat(radius[0]) / 100) * viewSize) / 1.1;
+            const r0 = ((parseFloat(radius[0]) / 100) * viewSize) / 1.2;
             const r1 = ((parseFloat(radius[1]) / 100) * viewSize) / 1.6;
             const cx = api.getWidth() * 0.5;
             const cy = api.getHeight() * 1;

@@ -105,7 +105,7 @@ const Dashboard: React.FC = () => {
           <TabsTrigger style={{fontSize:'30px',color:'white',padding:'15px'}} value="HINDI">HINDI</TabsTrigger>
         </TabsList>
       </Tabs>
-     <div className="relative top-[17px]">
+     <div className="relative top-[20px]">
         <img src={twostates} alt="" />
         <div className="live-blog-container absolute top-[165px] left-[50px]">
   <span className="live-text">| LIVE</span> <span className="blog-text">BLOG </span>

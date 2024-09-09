@@ -73,9 +73,9 @@ function ProgressBar() {
           </Avatar>
 
           {/* Progress Bar with Assembly Chair Image */}
-          <div className="relative w-[60%]">
-            <div className="h-4 bg-gray-300 overflow-hidden rounded-full">
-              <div className="h-4" style={{ width: `${item.progress}%`, backgroundColor: item.color }} />
+          <div className="relative w-[75%]">
+            <div className="h-2 bg-gray-300 overflow-hidden rounded-none">
+              <div className="h-2" style={{ width: `${item.progress}%`, backgroundColor: item.color }} />
             </div>
             {/* Assembly chair image placed at the end of the progress */}
             <img
@@ -90,7 +90,7 @@ function ProgressBar() {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           {/* Displaying percentage */}
-          <b className="ml-4">{item.progress}%</b>
+          {/* <b className="mt-[-8px] mr-2">{item.progress}%</b> */}
         </div>
       ))}
     </div>

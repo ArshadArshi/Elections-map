@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { MapContainer, GeoJSON, Marker, Tooltip, Popup } from "react-leaflet";
+import React, { useState, useRef } from "react";
+import { MapContainer, GeoJSON, Marker, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import geojsonData from "../../j_and_k_assembly_new_borders.json";
 import {

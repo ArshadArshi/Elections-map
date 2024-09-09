@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -26,7 +26,7 @@ const cardContents = [
   },
   {
     candidateImg: one,
-    name: "Abdulla",
+    name: "Prasad Babu Chavala",
     status: "Lead",
     party: "JMK",
     constituency: "Jammu",
@@ -86,29 +86,29 @@ export function CarouselCard() {
         <CarouselContent>
           <CarouselItem>
             <div>
-              <Card className="rounded-none p-2" style={{background:'#ededed'}}>
-                <CardContent className="flex aspect-rectangle w-[650px] items-center justify-evenly p-3">
+              <Card className="rounded-none" style={{background:'#ededed'}}>
+                <CardContent className="m-1 p-0 flex aspect-rectangle items-center justify-between">
                   {/* Left side: Image */}
                   
                     <img
                       src={cardContents[currentPage].candidateImg}
                       alt={cardContents[currentPage].name}
-                      className="w-[150px] h-[100px] object-cover rounded-md"
+                      className="w-[150px] h-[120px] object-cover"
                     />
                   
 
                   {/* Right side: Candidate details */}
-                  <div className="w-[500px] flex flex-col pl-5">
-                    <div className="text-lg font-bold">
+                  <div className="flex w-full flex-col">
+                    <div style={{fontSize:'25px'}} className="flex justify-center items-center text-gray-600 text-lg">
                       {cardContents[currentPage].name}
                     </div>
-                    <div className="font-bold text-lg text-gray-600">
+                    <div style={{fontSize:'25px'}} className="flex justify-center items-center font-bold text-lg text-gray-600">
                      {cardContents[currentPage].party}
                     </div>
-                    <div className="text-lg font-bold text-left text-green-600">
+                    <div style={{fontSize:'25px'}} className="flex justify-center items-center text-lg font-bold text-center text-green-600">
                     {cardContents[currentPage].status}
                     </div>
-                    <div className="flex items-center text-center text-sm text-gray-600">
+                    <div style={{fontSize:'15px'}} className="flex font-bold items-center justify-center text-center text-sm text-gray-600">
                      {cardContents[currentPage].constituency}
                     </div>
                   </div>

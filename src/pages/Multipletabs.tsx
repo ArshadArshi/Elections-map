@@ -1,20 +1,15 @@
 import { Tabs, TabsList } from "@/components/ui/tabs"
 import { TabsContent, TabsTrigger } from "@/components/ui/tabs"
 import JammuMap from "./JammuMap"
-import { SetStateAction } from "react"
 import PieChart from "./PieChart"
 import Haryanamap from "./Haryanamap"
 import TableData from "./TableData"
 import Cards from "./Cards"
 import HaryanaMapWise from "./HaryanaMapWise"
+import JammuMapWise from "./JammuMapWise"
 
 function MultipleTabs() {
  
-
-  function setSelectedConstituency(_value: SetStateAction<string | undefined>): void {
-    throw new Error("Function not implemented.")
-  }
-
   return (
     <div className="flex justify-center items-center mb-5">
       <Tabs defaultValue="JAMMU & KASHMIR" className="w-full">
@@ -83,9 +78,9 @@ function MultipleTabs() {
         <TabsContent value="Comparision">
         <div className="flex justify-between items-center mt-4">
           <div className="w-full z-0 flex justify-between ">
-          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
-          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
-          <JammuMap  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
+          <JammuMapWise  height={"350px"} width={"350px"} zoom={7} bjpCount={0} incCount={0} congressCount={0} otherCount={0} />
           </div>
           </div>
         </TabsContent>
