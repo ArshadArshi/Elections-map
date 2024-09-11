@@ -56,15 +56,54 @@ const [marker, setMarker] = useState<{
   const styleFeature = (feature?: Feature<Geometry, GeoJsonProperties>) => {
     if (!feature) return {};
 
-    const party = feature.properties?.party;
+    const district = feature.properties?.district;
     let fillColor;
-    if (party === "BJP") {
+    if (district === "Panchkula") {
       fillColor = "#FF9900";
-    } else if (party === "INC") {
-      fillColor = "#4DB6E2";
-    } else if (party === "CONGRESS") {
-      fillColor = "#006400";
-    } else {
+    } else if (district === "Ambala") {
+      fillColor = "lightblue";
+    } else if (district === "Yamunanagar") {
+      fillColor = "pink";
+    }else if (district === "Kurukshetra") {
+        fillColor = "yellow";
+      }else if (district === "Kaithal") {
+        fillColor = "red";
+      }else if (district === "Karnal") {
+        fillColor = "crimson";
+      }
+      else if (district === "Panipat") {
+        fillColor = "aqua";
+      }else if (district === "Sonipat") {
+        fillColor = "darkviolet";
+      }else if (district === "Jind") {
+        fillColor = "fuchsia";
+      }else if (district === "Fatehabad") {
+        fillColor = "greenyellow";
+      }else if (district === "Sirsa") {
+        fillColor = "lime";
+      }else if (district === "Hisar") {
+        fillColor = "olive";
+      }else if (district === "Bhiwani") {
+        fillColor = "teal";
+      }else if (district === "Rohtak") {
+        fillColor = "tan";
+      }else if (district === "Jhajjar") {
+        fillColor = "coral";
+      }else if (district === "Mahendragarh") {
+        fillColor = "darkslateblue";
+      }else if (district === "Rewari") {
+        fillColor = "royalblue";
+      }else if (district === "Gurgaon") {
+        fillColor = "palegreen";
+      }else if (district === "Nuh") {
+        fillColor = "khaki";
+      }else if (district === "Palwal") {
+        fillColor = "olivedrab";
+      }else if (district === "Faridabad") {
+        fillColor = "deepskyblue";
+      }else if (district === "Charkhi-Dadri") {
+        fillColor = "lawngreen";
+      } else {
       fillColor = "#808080";
     }
 
@@ -79,8 +118,9 @@ const [marker, setMarker] = useState<{
 
   // Function to define custom behavior for each feature
   const onEachFeature = (feature: Feature<Geometry, GeoJsonProperties>, layer: L.Layer) => {
-    if (feature.properties && feature.properties.AC_NAME) {
-      layer.bindTooltip(feature.properties.AC_NAME, {
+    const district = feature.properties?.district
+    if (district) {
+      layer.bindTooltip(district, {
         permanent: false,
         direction: "top",
         className: "custom-tooltip",

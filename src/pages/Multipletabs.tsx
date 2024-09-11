@@ -13,6 +13,9 @@ import HaryanaHistoryMap from "./HaryanaHistoryMap"
 import JammuHistoryMap from "./JammuHistoryMap"
 import JKAssemblyMap from "./JKAssemblyMap"
 import JKDistrictMap from "./JKDistrictMap"
+import HaryanaAssemblyMap from "./HaryanaAssemblyMap"
+import HaryanaDistrictMap from "./HaryanaDistrictMap"
+import HaryanaRegionalMap from "./HaryanaRegionalMap"
 
 function MultipleTabs() {
  
@@ -145,21 +148,21 @@ function MultipleTabs() {
         <TabsContent value="Loksabha Wise">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <HaryanaAssemblyMap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
           </div>
           </div>
         </TabsContent>
         <TabsContent value="District Wise">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <HaryanaDistrictMap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
           </div>
           </div>
         </TabsContent>
         <TabsContent value="Region Wise">
         <div className="flex justify-between items-center mt-4">
           <div className="w-1/2 z-0">
-          <Haryanamap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
+          <HaryanaRegionalMap height={"400px"} width={"350px"} zoom={7} bjpHCount={0} incHCount={0} congressHCount={0} otherHCount={0} />
           </div>
           </div>
         </TabsContent>

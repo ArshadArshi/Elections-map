@@ -56,15 +56,30 @@ const [marker, setMarker] = useState<{
   const styleFeature = (feature?: Feature<Geometry, GeoJsonProperties>) => {
     if (!feature) return {};
 
-    const party = feature.properties?.party;
+    const loksabha = feature.properties?.loksabha;
     let fillColor;
-    if (party === "BJP") {
+    if (loksabha === "Ambala") {
       fillColor = "#FF9900";
-    } else if (party === "INC") {
+    } else if (loksabha === "Kurukshetra") {
       fillColor = "#4DB6E2";
-    } else if (party === "CONGRESS") {
-      fillColor = "#006400";
-    } else {
+    } else if (loksabha === "Sirsa") {
+      fillColor = "pink";
+    }else if (loksabha === "Hisar") {
+        fillColor = "yellow";
+      }else if (loksabha === "Karnal") {
+        fillColor = "red";
+      }else if (loksabha === "Sonipat") {
+        fillColor = "lightgreen";
+      }else if (loksabha === "Rohtak") {
+        fillColor = "#DAA520";
+      }else if (loksabha === "Bhiwani-Mahendragarh") {
+        fillColor = "crimson";
+      }else if (loksabha === "Gurgaon") {
+        fillColor = "aqua";
+      }else if (loksabha === "Faridabad") {
+        fillColor = "fuchsia";
+      }
+     else {
       fillColor = "#808080";
     }
 
@@ -79,8 +94,9 @@ const [marker, setMarker] = useState<{
 
   // Function to define custom behavior for each feature
   const onEachFeature = (feature: Feature<Geometry, GeoJsonProperties>, layer: L.Layer) => {
-    if (feature.properties && feature.properties.AC_NAME) {
-      layer.bindTooltip(feature.properties.AC_NAME, {
+    const loksabha = feature.properties?.loksabha
+    if (loksabha) {
+      layer.bindTooltip(loksabha, {
         permanent: false,
         direction: "top",
         className: "custom-tooltip",

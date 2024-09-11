@@ -106,8 +106,9 @@ const JKAssemblyMap: React.FC<Props> = ({ height, width, zoom }) => {
     feature: Feature<Geometry, GeoJsonProperties>,
     layer: L.Layer
   ) => {
-    if (feature.properties && feature.properties.seat_district_en) {
-        layer.bindTooltip(feature.properties.seat_district_en, {
+    const loksabha = feature.properties?.loksabha
+    if (loksabha) {
+        layer.bindTooltip(loksabha, {
             permanent: false,
             direction: "top",
           });

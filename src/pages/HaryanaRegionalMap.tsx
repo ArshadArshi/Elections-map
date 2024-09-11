@@ -56,15 +56,21 @@ const [marker, setMarker] = useState<{
   const styleFeature = (feature?: Feature<Geometry, GeoJsonProperties>) => {
     if (!feature) return {};
 
-    const party = feature.properties?.party;
+    const region = feature.properties?.region;
     let fillColor;
-    if (party === "BJP") {
+    if (region === "Ambala") {
       fillColor = "#FF9900";
-    } else if (party === "INC") {
+    } else if (region === "Karnal") {
       fillColor = "#4DB6E2";
-    } else if (party === "CONGRESS") {
-      fillColor = "#006400";
-    } else {
+    } else if (region === "Rohtak") {
+      fillColor = "pink";
+    }else if (region === "Hisar") {
+        fillColor = "yellow";
+      }else if (region === "Gurgaon") {
+        fillColor = "red";
+      }else if (region === "Faridabad") {
+        fillColor = "crimson";
+      } else {
       fillColor = "#808080";
     }
 
@@ -79,8 +85,9 @@ const [marker, setMarker] = useState<{
 
   // Function to define custom behavior for each feature
   const onEachFeature = (feature: Feature<Geometry, GeoJsonProperties>, layer: L.Layer) => {
-    if (feature.properties && feature.properties.AC_NAME) {
-      layer.bindTooltip(feature.properties.AC_NAME, {
+    const region = feature.properties?.region;
+    if (region) {
+      layer.bindTooltip(region, {
         permanent: false,
         direction: "top",
         className: "custom-tooltip",

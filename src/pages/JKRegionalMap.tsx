@@ -79,15 +79,20 @@ const JKRegionalMap: React.FC<Props> = ({ height, width, zoom }) => {
     features: geojson.features, // No filtering, always show both regions
   };
 
-  const onEachFeature = (feature: Feature<Geometry, GeoJsonProperties>, layer: L.Layer) => {
-    const region = feature.properties?.region;
-
-    // Handle click and mouse events
-    layer.on({
-      click: highlightFeature,
-      mouseover: () => setHoveredRegion(region),
-      mouseout: () => setHoveredRegion(null),
-    });
+  const onEachFeature = (
+    feature: Feature<Geometry, GeoJsonProperties>,
+    layer: L.Layer
+  ) => {
+    const region = feature.properties?.region
+    if (region) {
+        layer.bindTooltip(region, {
+            permanent: false,
+            direction: "top",
+          });
+      layer.on({
+        click: highlightFeature,
+      });
+    }
   };
 
   const resetMap = () => {
