@@ -211,7 +211,8 @@ const JammuMap: React.FC<Props> = ({ height, width, zoom }) => {
         marginBottom: "10px",
       }}
     >
-      <HomeIcon onClick={resetMap} style={{width:'40px',height:'40px',cursor:'pointer', border:'none', background:'#c6c6c6',padding:'6px',borderRadius:'2px', position: "absolute", top: "10px", left: "10px", zIndex: 1000 }} /><MapContainer
+      <HomeIcon onClick={resetMap} style={{width:'40px',height:'40px',cursor:'pointer', border:'none', background:'#c6c6c6',padding:'6px',borderRadius:'2px', position: "absolute", top: "10px", left: "10px", zIndex: 1000 }} />
+      <MapContainer
         center={[33.7, 75.01]}
         zoom={zoom}
         style={{

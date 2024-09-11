@@ -29,6 +29,7 @@
     "@radix-ui/react-toast": "^1.2.1",
     "@react-google-maps/api": "^2.19.3",
     "@reduxjs/toolkit": "^2.2.6",
+    "@turf/turf": "^7.1.0",
     "@types/geojson": "^7946.0.14",
     "@types/mapbox-gl": "^3.4.0",
     "@types/xlsx": "^0.0.36",

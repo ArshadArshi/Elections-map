@@ -1,0 +1,111 @@
+ [
+    {
+      "id": 1,
+      "district_id": 101,
+      "district_name": "Kupwara",
+      "parties": [
+        {
+          "party_id": 1,
+          "party_name": "BJP"
+        },
+        {
+          "party_id": 2,
+          "party_name": "PDP"
+        }
+      ],
+      "constituencies": [
+        {
+          "id": 1,
+          "name": "Kupwara",
+          "leading_party": "BJP"
+        },
+        {
+          "id": 2,
+          "name": "Handwara",
+          "leading_party": "PDP"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "district_id": 102,
+      "district_name": "Baramulla",
+      "parties": [
+        {
+          "party_id": 3,
+          "party_name": "INC"
+        },
+        {
+          "party_id": 1,
+          "party_name": "BJP"
+        }
+      ],
+      "constituencies": [
+        {
+          "id": 3,
+          "name": "Baramulla",
+          "leading_party": "INC"
+        },
+        {
+          "id": 4,
+          "name": "Sopore",
+          "leading_party": "BJP"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "district_id": 103,
+      "district_name": "Srinagar",
+      "parties": [
+        {
+          "party_id": 4,
+          "party_name": "NC"
+        },
+        {
+          "party_id": 5,
+          "party_name": "AP"
+        }
+      ],
+      "constituencies": [
+        {
+          "id": 5,
+          "name": "Srinagar",
+          "leading_party": "NC"
+        },
+        {
+          "id": 6,
+          "name": "Kangan",
+          "leading_party": "AP"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "district_id": 104,
+      "district_name": "Anantnag",
+      "parties": [
+        {
+          "party_id": 2,
+          "party_name": "PDP"
+        },
+        {
+          "party_id": 6,
+          "party_name": "OTHERS"
+        }
+      ],
+      "constituencies": [
+        {
+          "id": 7,
+          "name": "Anantnag",
+          "leading_party": "PDP"
+        },
+        {
+          "id": 8,
+          "name": "Bijbehara",
+          "leading_party": "OTHERS"
+        }
+      ]
+    }
+  ]
+  
